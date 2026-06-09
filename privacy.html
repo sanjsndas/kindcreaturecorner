@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Privacy Policy | Kind Creature Corner — Your Data & Pet Privacy</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f0f9ff;
+      color: #0a2b3e;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --blue-deep: #0a4b6e;
+      --blue-primary: #1e6f9f;
+      --blue-soft: #4a9fd8;
+      --blue-mist: #cfe6f5;
+      --blue-lightest: #e6f3fc;
+      --accent-sand: #f3e3c2;
+      --white: #ffffff;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* header */
+    header {
+      background: var(--white);
+      box-shadow: 0 4px 12px rgba(0, 32, 64, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 2px solid var(--blue-mist);
+    }
+
+    .nav-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+      flex-wrap: wrap;
+    }
+
+    .logo h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--blue-deep);
+      letter-spacing: -0.3px;
+    }
+    .logo span {
+      color: var(--blue-soft);
+      font-weight: 500;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 600;
+      color: var(--blue-deep);
+      transition: 0.2s;
+    }
+    .nav-links a:hover {
+      color: var(--blue-primary);
+      border-bottom: 2px solid var(--blue-soft);
+      padding-bottom: 4px;
+    }
+
+    /* hero */
+    .hero-privacy {
+      background: linear-gradient(135deg, #d4e9f5 0%, #b7d9ed 100%);
+      border-radius: 0 0 40px 40px;
+      padding: 48px 0;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    .hero-privacy h2 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--blue-deep);
+      margin-bottom: 12px;
+    }
+    .hero-privacy p {
+      font-size: 1.2rem;
+      color: #1f4b6e;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* policy content */
+    .policy-wrapper {
+      background: var(--white);
+      border-radius: 36px;
+      padding: 42px 40px;
+      margin: 30px 0 50px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05);
+      border: 1px solid #d4e6f1;
+    }
+    .policy-section {
+      margin-bottom: 38px;
+    }
+    .policy-section h3 {
+      font-size: 1.7rem;
+      color: var(--blue-deep);
+      margin-bottom: 16px;
+      border-left: 5px solid var(--blue-soft);
+      padding-left: 18px;
+    }
+    .policy-section h4 {
+      font-size: 1.25rem;
+      color: #1e6f9f;
+      margin: 20px 0 8px;
+    }
+    .policy-section p, .policy-section li {
+      color: #1e3e55;
+      margin-bottom: 12px;
+      line-height: 1.6;
+    }
+    .policy-section ul, .policy-section ol {
+      margin: 12px 0 16px 28px;
+    }
+    .badge-effective {
+      background: var(--blue-deep);
+      color: white;
+      border-radius: 60px;
+      padding: 6px 18px;
+      font-size: 0.8rem;
+      display: inline-block;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+    .highlight-card {
+      background: var(--blue-lightest);
+      padding: 22px 28px;
+      border-radius: 28px;
+      margin: 28px 0;
+      border-left: 6px solid var(--blue-primary);
+    }
+    .contact-shortcut {
+      background: var(--blue-mist);
+      border-radius: 28px;
+      padding: 24px;
+      text-align: center;
+      margin-top: 32px;
+    }
+    .btn-ghost {
+      background: transparent;
+      border: 2px solid var(--blue-deep);
+      padding: 10px 24px;
+      border-radius: 40px;
+      font-weight: 700;
+      color: var(--blue-deep);
+      text-decoration: none;
+      display: inline-block;
+      transition: 0.2s;
+    }
+    .btn-ghost:hover {
+      background: var(--blue-deep);
+      color: white;
+    }
+
+    /* footer */
+    .footer {
+      background: #052c3f;
+      color: #e2f0f7;
+      padding: 48px 0 24px;
+      margin-top: 70px;
+      border-radius: 32px 32px 0 0;
+    }
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .footer-col h4 {
+      font-size: 1.4rem;
+      margin-bottom: 16px;
+      color: #cdeefc;
+    }
+    .footer-col p, .footer-col a {
+      color: #bfddee;
+      text-decoration: none;
+      margin: 8px 0;
+      display: block;
+    }
+    .footer-col a:hover {
+      text-decoration: underline;
+      color: white;
+    }
+    .copyright {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #1c5a78;
+      font-size: 0.85rem;
+    }
+    @media (max-width: 768px) {
+      .nav-flex {
+        flex-direction: column;
+        gap: 16px;
+      }
+      .hero-privacy h2 {
+        font-size: 2rem;
+      }
+      .policy-wrapper {
+        padding: 24px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container nav-flex">
+    <div class="logo">
+      <h1>Kind Creature <span>Corner</span></h1>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="terms.html">Terms Of Privacy</a></li>
+      <li><a href="privacy.html" style="border-bottom: 2px solid var(--blue-soft); padding-bottom: 4px;">Privacy Policy</a></li>
+      <li><a href="cookies.html">Cookies Policy</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <div class="hero-privacy">
+    <div class="container">
+      <h2>🔒 Your Privacy, Our Promise</h2>
+      <p>At Kind Creature Corner, protecting your personal data and your pet’s well-being go paw in paw. Read how we safeguard every interaction.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="policy-wrapper">
+      <div class="badge-effective">📅 Effective from March 15, 2026 | Last revised: April 2, 2026</div>
+      
+      <div class="policy-section">
+        <h3>1. Information We Collect</h3>
+        <p>Kind Creature Corner (“KCC”, “we”, “us”, “our”) collects information to provide high-quality pet care, appointment scheduling, wellness plans, and customer support. The types of data include:</p>
+        <ul>
+          <li><strong>Personal identifiers</strong> – name, email address, phone number, postal address (for billing or service delivery).</li>
+          <li><strong>Pet health details</strong> – medical history, vaccination records, dietary needs, and behavioral notes (shared only with veterinary staff).</li>
+          <li><strong>Transaction data</strong> – services purchased, payment method (processed securely via PCI-compliant partners).</li>
+          <li><strong>Communication preferences</strong> – SMS/email reminders, marketing consents, and feedback forms.</li>
+          <li><strong>Website usage</strong> – cookies, IP addresses, and interaction analytics (see our <a href="cookies.html" style="color: var(--blue-primary);">Cookies Policy</a>).</li>
+        </ul>
+      </div>
+
+      <div class="policy-section">
+        <h3>2. How We Use Your Information</h3>
+        <p>We use your data exclusively to enhance your experience and ensure the best care for your companion. Purposes include:</p>
+        <ul>
+          <li>🐾 Scheduling and managing pet appointments, boarding, and grooming services.</li>
+          <li>📧 Sending appointment reminders, health tips, and time-sensitive updates (e.g., vaccine due dates).</li>
+          <li>💡 Improving our services, training our veterinary team, and handling emergency triage coordination.</li>
+          <li>📊 Analyzing general trends to create better wellness resources.</li>
+          <li>⚖️ Fulfilling legal obligations (e.g., medical records retention required by state veterinary boards).</li>
+        </ul>
+        <div class="highlight-card">
+          <strong>🐕 Your trust matters:</strong> We never sell or rent personal information to third parties for marketing purposes. Any data shared with labs or specialists is strictly for medical diagnosis with your consent.
+        </div>
+      </div>
+
+      <div class="policy-section">
+        <h3>3. Legal Basis for Processing (GDPR & CCPA Compliance)</h3>
+        <p>Depending on your location, we process data based on:</p>
+        <ul>
+          <li><strong>Contractual necessity:</strong> To provide veterinary and pet care services you request.</li>
+          <li><strong>Legitimate interests:</strong> Improving our operations, fraud prevention, and internal analytics.</li>
+          <li><strong>Consent:</strong> For optional communications, newsletters, or certain pet wellness surveys.</li>
+          <li><strong>Legal obligations:</strong> Record-keeping as required by California and federal veterinary regulations.</li>
+        </ul>
+        <p>California residents have the right to know, delete, or opt-out of data “sales” (we do not sell data). For requests, email <strong>privacy@kindcreaturecorner.com</strong>.</p>
+      </div>
+
+      <div class="policy-section">
+        <h3>4. Data Sharing & Third Parties</h3>
+        <p>We only share your information when necessary for the veterinary process or legal compliance:</p>
+        <ul>
+          <li>✅ <strong>Veterinary labs & pharmacies:</strong> To process tests or deliver medications directly.</li>
+          <li>✅ <strong>Emergency referral hospitals:</strong> If your pet requires urgent specialized care beyond our facility.</li>
+          <li>✅ <strong>Service providers:</strong> Secure payment processors (Stripe, PayPal), cloud storage (HIPAA-equivalent for vet data), and scheduling platforms. All sign strict confidentiality agreements.</li>
+          <li>✅ <strong>Legal authorities:</strong> When required by law, court order, or to prevent harm.</li>
+        </ul>
+        <p>We never share information with data brokers, advertisers, or non-related entities.</p>
+      </div>
+
+      <div class="policy-section">
+        <h3>5. Data Security & Retention</h3>
+        <p>We implement industry-standard safeguards: encrypted databases, role-based access, and regular security audits. Physical records are stored in locked facilities with restricted access. Retention periods:</p>
+        <ul>
+          <li>📂 Pet medical records: Minimum 7 years after last visit (or as required by CA veterinary law).</li>
+          <li>📞 Contact inquiries: 24 months from last interaction.</li>
+          <li>💳 Financial data: Retained only as long as needed for transaction disputes or accounting (up to 7 years).</li>
+        </ul>
+        <p>In case of a data breach, affected users will be notified within 72 hours as required by law.</p>
+      </div>
+
+      <div class="policy-section">
+        <h3>6. Your Privacy Rights & Choices</h3>
+        <h4>✍️ Access & Correction</h4>
+        <p>You may request a copy of your personal data or update inaccuracies by contacting our Privacy Officer at <strong>privacy@kindcreaturecorner.com</strong> or calling (415) 882-PETS.</p>
+        <h4>🗑️ Right to Deletion</h4>
+        <p>You can ask us to delete personal information not required for legal or medical retention. We will honor such requests unless an exception applies (e.g., active debt, ongoing treatment).</p>
+        <h4>📢 Opt-out of Marketing</h4>
+        <p>Every promotional email contains an unsubscribe link. You can also text "STOP" from your mobile device to end SMS reminders.</p>
+        <h4>🛡️ Do Not Track Signals</h4>
+        <p>Our website responds to global privacy control (GPC) signals as an opt-out of non-essential data sharing.</p>
+      </div>
+
+      <div class="policy-section">
+        <h3>7. Children’s & Minor’s Privacy</h3>
+        <p>Our services are not directed to children under 13, and we do not knowingly collect data from minors. If a pet care profile is created by a guardian, all data is treated with care under parent/guardian consent.</p>
+      </div>
+
+      <div class="policy-section">
+        <h3>8. International Data Transfers</h3>
+        <p>Kind Creature Corner is based in the United States. If you access our website from outside the US, your data may be transferred to and processed in the US, where privacy laws may differ. By using our services, you consent to such transfer. For EU residents, we rely on Standard Contractual Clauses (SCCs) where applicable.</p>
+      </div>
+
+      <div class="policy-section">
+        <h3>9. Updates to This Privacy Policy</h3>
+        <p>We may revise this policy occasionally to reflect legal changes or service improvements. Material changes will be notified via email (if we have your address) or via a prominent notice on our website. The “effective date” at the top indicates the latest version.</p>
+      </div>
+
+      <div class="highlight-card">
+        <strong>🐾 Have questions or a privacy request?</strong><br>
+        Our dedicated Privacy Team is available Monday–Friday 9am–6pm PST. We aim to respond to verified requests within 15 business days.
+      </div>
+
+      <div class="contact-shortcut">
+        <h3 style="color: var(--blue-deep); margin-bottom: 12px;">📬 Reach our Data Protection Officer</h3>
+        <p><strong>Email:</strong> privacy@kindcreaturecorner.com &nbsp;|&nbsp; <strong>Mail:</strong> Attn: Privacy Office, 1234 Pawsome Lane, Blue Harbor District, San Francisco, CA 94107</p>
+        <p><strong>Phone:</strong> +1 (415) 882-PETS (7387) ext. 411</p>
+        <a href="contact.html" class="btn-ghost" style="margin-top: 15px;">📝 Contact Us for Privacy Inquiries →</a>
+      </div>
+      
+      <!-- Additional summary for pet parents -->
+      <div style="margin-top: 38px; border-top: 2px dashed #cfe6f5; padding-top: 24px;">
+        <p style="font-size: 0.9rem; text-align: center;">Kind Creature Corner complies with California Consumer Privacy Act (CCPA) and veterinary-specific confidentiality rules (AVMA guidelines). For general inquiries, visit our main contact page or call our wellness center.</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-col">
+        <h4>Kind Creature Corner</h4>
+        <p>📍 1234 Pawsome Lane, Blue Harbor District<br>San Francisco, CA 94107</p>
+        <p>📞 <strong>+1 (415) 882-PETS (7387)</strong></p>
+        <p>📧 hello@kindcreaturecorner.com</p>
+      </div>
+      <div class="footer-col">
+        <h4>Hours</h4>
+        <p>Mon-Fri: 8:00am – 7:00pm</p>
+        <p>Saturday: 9:00am – 5:00pm</p>
+        <p>Sunday: Grooming & boarding only</p>
+        <p>Emergency: 24/7 triage line</p>
+      </div>
+      <div class="footer-col">
+        <h4>Legal & Policies</h4>
+        <p><a href="privacy.html">Privacy Policy</a></p>
+        <p><a href="terms.html">Terms of Service</a></p>
+        <p><a href="cookies.html">Cookies Policy</a></p>
+        <p><a href="contact.html">Contact & Support</a></p>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>© 2026 Kind Creature Corner — Blue Theme Pet Care Excellence. Every tail wag matters. 🐕🐈🦜</p>
+      <p style="margin-top: 10px;">Address: 1234 Pawsome Lane, Blue Harbor District, San Francisco, CA 94107 | Phone: +1 (415) 882-PETS (7387)</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // simple interaction for smooth anchor & console
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if(href !== "#" && href !== "" && href.startsWith('#')){
+        const target = document.querySelector(href);
+        if(target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    });
+  });
+  console.log("Kind Creature Corner — Privacy Policy page with full legal information, CCPA rights, and veterinary data handling practices.");
+</script>
+</body>
+</html>

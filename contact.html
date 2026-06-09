@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Contact Us | Kind Creature Corner — Premium Pet Care & Wellness</title>
+  <!-- Google Fonts & simple CSS reset -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f0f9ff;   /* soft blue-white background */
+      color: #0a2b3e;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    /* blue theme variables */
+    :root {
+      --blue-deep: #0a4b6e;
+      --blue-primary: #1e6f9f;
+      --blue-soft: #4a9fd8;
+      --blue-mist: #cfe6f5;
+      --blue-lightest: #e6f3fc;
+      --accent-sand: #f3e3c2;
+      --white: #ffffff;
+      --gray-mild: #f8fafc;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* header & nav */
+    header {
+      background: var(--white);
+      box-shadow: 0 4px 12px rgba(0, 32, 64, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 2px solid var(--blue-mist);
+    }
+
+    .nav-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+      flex-wrap: wrap;
+    }
+
+    .logo h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--blue-deep);
+      letter-spacing: -0.3px;
+    }
+    .logo span {
+      color: var(--blue-soft);
+      font-weight: 500;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 600;
+      color: var(--blue-deep);
+      transition: 0.2s;
+    }
+    .nav-links a:hover {
+      color: var(--blue-primary);
+      border-bottom: 2px solid var(--blue-soft);
+      padding-bottom: 4px;
+    }
+
+    /* hero section for contact */
+    .hero-contact {
+      background: linear-gradient(135deg, #cbe6f5 0%, #aad0e8 100%);
+      border-radius: 0 0 40px 40px;
+      padding: 48px 0;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    .hero-contact h2 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--blue-deep);
+      margin-bottom: 12px;
+    }
+    .hero-contact p {
+      font-size: 1.2rem;
+      color: #1f4b6e;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    /* contact grid: form + info cards */
+    .contact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin: 50px 0;
+    }
+    .contact-form {
+      flex: 2;
+      background: var(--white);
+      border-radius: 32px;
+      padding: 32px 28px;
+      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.05);
+      border: 1px solid #d4e6f1;
+    }
+    .contact-info {
+      flex: 1.2;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .info-card {
+      background: var(--white);
+      border-radius: 28px;
+      padding: 24px;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.04);
+      border-left: 6px solid var(--blue-soft);
+      transition: transform 0.2s;
+    }
+    .info-card:hover {
+      transform: translateY(-5px);
+    }
+    .info-card h3 {
+      color: var(--blue-deep);
+      font-size: 1.4rem;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .info-card p, .info-card a {
+      color: #2c4e6b;
+      text-decoration: none;
+      margin: 8px 0;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+    .info-card a:hover {
+      color: var(--blue-primary);
+      text-decoration: underline;
+    }
+    .social-icons {
+      display: flex;
+      gap: 20px;
+      margin-top: 15px;
+    }
+    .social-icons span {
+      background: var(--blue-lightest);
+      padding: 8px 16px;
+      border-radius: 40px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: var(--blue-deep);
+      cursor: default;
+    }
+
+    /* form styling */
+    .form-group {
+      margin-bottom: 22px;
+    }
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--blue-deep);
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid #cce1ed;
+      border-radius: 28px;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      background: #fefefe;
+      transition: 0.2s;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: var(--blue-soft);
+      box-shadow: 0 0 0 3px rgba(74, 159, 216, 0.2);
+    }
+    .btn-submit {
+      background: var(--blue-deep);
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 40px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.2s;
+      width: 100%;
+      max-width: 240px;
+    }
+    .btn-submit:hover {
+      background: #083c57;
+      transform: translateY(-2px);
+    }
+    .map-placeholder {
+      background: #d9e9f3;
+      border-radius: 28px;
+      padding: 20px;
+      text-align: center;
+      margin-top: 20px;
+    }
+    .map-placeholder img {
+      max-width: 100%;
+      border-radius: 20px;
+      margin-top: 12px;
+    }
+
+    /* additional section (FAQs or small highlights) */
+    .faq-section {
+      background: var(--blue-lightest);
+      border-radius: 36px;
+      padding: 40px;
+      margin: 40px 0;
+    }
+    .faq-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 20px;
+    }
+    .faq-item {
+      flex: 1 1 280px;
+      background: white;
+      border-radius: 24px;
+      padding: 20px;
+    }
+    .faq-item h4 {
+      color: var(--blue-primary);
+      margin-bottom: 10px;
+    }
+
+    /* footer */
+    .footer {
+      background: #052c3f;
+      color: #e2f0f7;
+      padding: 48px 0 24px;
+      margin-top: 70px;
+      border-radius: 32px 32px 0 0;
+    }
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .footer-col h4 {
+      font-size: 1.4rem;
+      margin-bottom: 16px;
+      color: #cdeefc;
+    }
+    .footer-col p, .footer-col a {
+      color: #bfddee;
+      text-decoration: none;
+      margin: 8px 0;
+      display: block;
+    }
+    .footer-col a:hover {
+      text-decoration: underline;
+      color: white;
+    }
+    .copyright {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #1c5a78;
+      font-size: 0.85rem;
+    }
+    @media (max-width: 768px) {
+      .nav-flex {
+        flex-direction: column;
+        gap: 16px;
+      }
+      .hero-contact h2 {
+        font-size: 2rem;
+      }
+      .contact-grid {
+        flex-direction: column;
+      }
+    }
+    .badge {
+      background: var(--blue-deep);
+      color: white;
+      border-radius: 60px;
+      padding: 4px 12px;
+      font-size: 0.75rem;
+      display: inline-block;
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container nav-flex">
+    <div class="logo">
+      <h1>Kind Creature <span>Corner</span></h1>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" style="border-bottom: 2px solid var(--blue-soft); padding-bottom: 4px;">Contact</a></li>
+      <li><a href="terms.html">Terms Of Privacy</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="cookies.html">Cookies Policy</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <!-- Hero contact section -->
+  <div class="hero-contact">
+    <div class="container">
+      <h2>We’d love to hear from you 🐾</h2>
+      <p>Have a question about our services, need to schedule a wellness visit, or simply want to share a happy pet moment? Reach out — our team is here for you and your companion.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- main contact grid: form + side info -->
+    <div class="contact-grid">
+      <!-- Contact Form -->
+      <div class="contact-form">
+        <h3 style="color: var(--blue-deep); margin-bottom: 20px; font-size: 1.8rem;">Send us a message ✨</h3>
+        <p style="margin-bottom: 28px; color: #2c5a7a;">We typically reply within 4 business hours. For emergencies, please call our triage line directly.</p>
+        <form id="contactForm" action="#" method="post">
+          <div class="form-group">
+            <label for="name">Full name *</label>
+            <input type="text" id="name" name="name" required placeholder="e.g., Jamie Parker">
+          </div>
+          <div class="form-group">
+            <label for="email">Email address *</label>
+            <input type="email" id="email" name="email" required placeholder="hello@example.com">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone number (optional)</label>
+            <input type="tel" id="phone" name="phone" placeholder="(415) 555-1234">
+          </div>
+          <div class="form-group">
+            <label for="pet-type">Pet type</label>
+            <select id="pet-type" name="pet_type">
+              <option value="dog">🐕 Dog</option>
+              <option value="cat">🐈 Cat</option>
+              <option value="small-mammal">🐇 Small mammal (bunny, guinea pig)</option>
+              <option value="bird">🦜 Bird</option>
+              <option value="reptile">🦎 Reptile / exotic</option>
+              <option value="other">🐾 Other / multiple pets</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject *</label>
+            <input type="text" id="subject" name="subject" required placeholder="Grooming appointment / Nutrition question / General inquiry">
+          </div>
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Tell us how we can help your furry, feathered or scaly friend..."></textarea>
+          </div>
+          <button type="submit" class="btn-submit">📬 Send message</button>
+          <p style="font-size: 0.8rem; margin-top: 16px;">By submitting, you agree to our privacy policy. We never share your data.</p>
+        </form>
+        <div id="formFeedback" style="margin-top: 20px; font-weight: 500;"></div>
+      </div>
+
+      <!-- right column: location, hours, direct contact -->
+      <div class="contact-info">
+        <div class="info-card">
+          <h3>📍 Visit our sanctuary</h3>
+          <p>1234 Pawsome Lane, Blue Harbor District<br>San Francisco, CA 94107</p>
+          <p><strong>📞 Phone:</strong> <a href="tel:+14158827387">+1 (415) 882-PETS (7387)</a><br>
+          <strong>📠 Fax:</strong> +1 (415) 882-7388</p>
+          <p><strong>✉️ Email:</strong> <a href="mailto:hello@kindcreaturecorner.com">hello@kindcreaturecorner.com</a><br>
+          <strong>🆘 After-hours urgent line:</strong> (415) 882-7399</p>
+        </div>
+
+        <div class="info-card">
+          <h3>🕒 Hours of operation</h3>
+          <p><strong>Mon - Fri:</strong> 8:00am – 7:00pm<br>
+          <strong>Saturday:</strong> 9:00am – 5:00pm<br>
+          <strong>Sunday:</strong> Grooming & boarding only (10am–4pm)<br>
+          <span class="badge" style="background:#0a4b6e;">24/7 Triage via phone</span></p>
+          <p>🐾 Boarding pick-up/drop-off: Daily 9am-6pm. Please call ahead for holiday availability.</p>
+        </div>
+
+        <div class="info-card">
+          <h3>🐾 Connect with us</h3>
+          <div class="social-icons">
+            <span>🐕 Instagram</span>
+            <span>🐈 Facebook</span>
+            <span>🦜 TikTok</span>
+          </div>
+          <p style="margin-top: 14px;">Follow us for daily pet wellness tips, adoption stories, and behind-the-scenes at Kind Creature Corner!</p>
+        </div>
+
+        <!-- simple map visual / location image (decorative) -->
+        <div class="map-placeholder">
+          <h4 style="color:#0a4b6e;">📍 Blue Harbor District</h4>
+          <img src="https://picsum.photos/id/15/400/180" alt="approximate map illustration" style="width:100%; border-radius: 20px;">
+          <p style="font-size:0.85rem; margin-top: 8px;">Ample parking & pet-friendly entrance 🌿</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Additional helpful FAQ / unique content block for better user experience -->
+    <div class="faq-section">
+      <h3 style="font-size: 1.8rem; color: var(--blue-deep); margin-bottom: 16px;">❓ Quick answers before you reach out</h3>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h4>📅 How do I book an appointment?</h4>
+          <p>You can call us directly, use the form above, or visit our online portal (link sent upon request). Same-day visits often available for urgent cases.</p>
+        </div>
+        <div class="faq-item">
+          <h4>🚑 Do you offer emergency services?</h4>
+          <p>Yes — we have a 24/7 triage phone line. For life-threatening emergencies, we coordinate with local 24h animal hospitals and can provide immediate stabilization.</p>
+        </div>
+        <div class="faq-item">
+          <h4>🐕‍🦺 Do you accept new clients?</h4>
+          <p>Absolutely! We welcome all species and breeds. New client registration can be done over the phone or via our contact form.</p>
+        </div>
+        <div class="faq-item">
+          <h4>💰 Do you offer payment plans?</h4>
+          <p>Yes, we partner with care credit and offer in-house wellness plans for vaccinations, checkups and dental cleanings. Ask our team!</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- extra rich content: testimonials / unique images that align with blue theme and pet care -->
+    <div style="display: flex; flex-wrap: wrap; gap: 20px; margin: 30px 0; justify-content: center;">
+      <div style="background: white; border-radius: 28px; padding: 12px 20px; flex: 1; min-width: 200px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
+        <span style="font-size: 2rem;">⭐ 4.95</span>
+        <p>From 2,800+ reviews • "The most compassionate pet care in the Bay Area"</p>
+      </div>
+      <div style="background: white; border-radius: 28px; padding: 12px 20px; flex: 1; min-width: 200px; text-align: center;">
+        <span style="font-size: 2rem;">🏆</span>
+        <p>Awarded "Best Pet Wellness Center 2025" – SF Pet Magazine</p>
+      </div>
+    </div>
+
+    <!-- additional contact note: directions and virtual tours -->
+    <div style="background: var(--blue-mist); border-radius: 32px; padding: 30px; margin: 20px 0 40px; text-align: center;">
+      <h3 style="color: #0a4b6e;">📱 Virtual consultations are also available!</h3>
+      <p>Can't make it in person? Schedule a 20-min video call with our behaviorists or veterinary nurses. <strong>Call or use contact form to request telemedicine.</strong></p>
+      <p style="margin-top: 12px;">📍 <strong>Directions:</strong> From Highway 101, exit Blue Harbor – we're next to the Pawsome Park. Look for the blue awning with paw prints! 🐾</p>
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER with same contact consistency -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-col">
+        <h4>Kind Creature Corner</h4>
+        <p>📍 1234 Pawsome Lane, Blue Harbor District<br>San Francisco, CA 94107</p>
+        <p>📞 <strong>+1 (415) 882-PETS (7387)</strong></p>
+        <p>📧 hello@kindcreaturecorner.com</p>
+      </div>
+      <div class="footer-col">
+        <h4>Hours</h4>
+        <p>Mon-Fri: 8:00am – 7:00pm</p>
+        <p>Saturday: 9:00am – 5:00pm</p>
+        <p>Sunday: Grooming & boarding only</p>
+        <p>Emergency: 24/7 triage line via phone</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <p><a href="#">About Us</a></p>
+        <p><a href="#">Wellness Blog</a></p>
+        <p><a href="#">Careers</a></p>
+        <p><a href="#">Pet loss support</a></p>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>© 2026 Kind Creature Corner — Blue Theme Pet Care Excellence. Every tail wag matters. 🐕🐈🦜</p>
+      <p style="margin-top: 10px;">Address: 1234 Pawsome Lane, Blue Harbor District, San Francisco, CA 94107 | Phone: +1 (415) 882-PETS (7387)</p>
+    </div>
+  </div>
+</footer>
+
+<!-- simple contact form handling (no backend, just demo simulation + validation) -->
+<script>
+  const contactForm = document.getElementById('contactForm');
+  const feedbackDiv = document.getElementById('formFeedback');
+
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const subject = document.getElementById('subject').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    if (!name || !email || !subject || !message) {
+      feedbackDiv.innerHTML = '<span style="color:#b22234;">❌ Please fill in all required fields (name, email, subject, message).</span>';
+      return;
+    }
+    if (!email.includes('@') || !email.includes('.')) {
+      feedbackDiv.innerHTML = '<span style="color:#b22234;">📧 Please enter a valid email address.</span>';
+      return;
+    }
+    // simulate success message
+    feedbackDiv.innerHTML = '<span style="color:#0a6b44;">✅ Thank you, ' + name + '! Your message has been sent to our pet care team. We\'ll reply within 4 hours (Mon-Sat). Meanwhile, feel free to call us for urgent needs. 🐾</span>';
+    contactForm.reset();
+    // optional: clear after 6 seconds
+    setTimeout(() => {
+      if(feedbackDiv.innerHTML.includes('Thank you')) {
+        feedbackDiv.innerHTML = '';
+      }
+    }, 8000);
+  });
+
+  // smooth scroll for any anchor if needed
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if(href !== "#" && href !== "" && href.startsWith('#')){
+        const target = document.querySelector(href);
+        if(target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    });
+  });
+  console.log("Kind Creature Corner Contact page — fully responsive with contact form, phone number, address & unique pet care information");
+</script>
+</body>
+</html>

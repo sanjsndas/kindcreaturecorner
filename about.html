@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>About Us | Kind Creature Corner – Our Story & Mission</title>
+  <!-- Google Fonts & simple CSS reset -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f0f9ff;
+      color: #0a2b3e;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --blue-deep: #0a4b6e;
+      --blue-primary: #1e6f9f;
+      --blue-soft: #4a9fd8;
+      --blue-mist: #cfe6f5;
+      --blue-lightest: #e6f3fc;
+      --accent-sand: #f3e3c2;
+      --white: #ffffff;
+      --gray-mild: #f8fafc;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* header & nav - same as homepage */
+    header {
+      background: var(--white);
+      box-shadow: 0 4px 12px rgba(0, 32, 64, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 2px solid var(--blue-mist);
+    }
+
+    .nav-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+      flex-wrap: wrap;
+    }
+
+    .logo h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--blue-deep);
+      letter-spacing: -0.3px;
+    }
+    .logo span {
+      color: var(--blue-soft);
+      font-weight: 500;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 600;
+      color: var(--blue-deep);
+      transition: 0.2s;
+    }
+    .nav-links a:hover {
+      color: var(--blue-primary);
+      border-bottom: 2px solid var(--blue-soft);
+      padding-bottom: 4px;
+    }
+
+    /* about hero */
+    .about-hero {
+      background: linear-gradient(115deg, #d3eaf5 0%, #b9def0 100%);
+      border-radius: 0 0 50px 50px;
+      padding: 70px 0 60px;
+      margin-bottom: 50px;
+    }
+    .about-hero-content {
+      text-align: center;
+      max-width: 850px;
+      margin: 0 auto;
+    }
+    .about-hero h2 {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--blue-deep);
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
+    }
+    .about-hero p {
+      font-size: 1.25rem;
+      color: #1f4b6e;
+      margin-bottom: 20px;
+    }
+    .badge-years {
+      background: var(--blue-deep);
+      color: white;
+      display: inline-block;
+      padding: 8px 24px;
+      border-radius: 60px;
+      font-weight: 600;
+      margin-top: 12px;
+    }
+
+    /* mission section */
+    .mission-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+      margin: 60px 0;
+    }
+    .mission-text {
+      flex: 1.2;
+    }
+    .mission-text h3 {
+      font-size: 2rem;
+      color: var(--blue-deep);
+      margin-bottom: 24px;
+      border-left: 6px solid var(--blue-soft);
+      padding-left: 20px;
+    }
+    .mission-text p {
+      margin-bottom: 18px;
+      font-size: 1.05rem;
+      color: #1f4157;
+    }
+    .mission-img {
+      flex: 1;
+      border-radius: 36px;
+      overflow: hidden;
+      box-shadow: 0 20px 30px -10px rgba(0,0,0,0.15);
+    }
+    .mission-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* values / pillars */
+    .values-section {
+      background: var(--blue-lightest);
+      border-radius: 56px;
+      padding: 50px 40px;
+      margin: 60px 0;
+    }
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #0a4b6e;
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .pillars {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+    .pillar-card {
+      background: white;
+      border-radius: 32px;
+      padding: 30px 24px;
+      flex: 1 1 260px;
+      text-align: center;
+      box-shadow: 0 12px 22px rgba(0, 0, 0, 0.05);
+      transition: all 0.2s;
+    }
+    .pillar-card:hover {
+      transform: translateY(-6px);
+    }
+    .pillar-icon {
+      font-size: 3rem;
+      margin-bottom: 16px;
+    }
+    .pillar-card h4 {
+      font-size: 1.5rem;
+      color: var(--blue-primary);
+      margin-bottom: 14px;
+    }
+    .pillar-card p {
+      color: #2c4e6b;
+    }
+
+    /* team section */
+    .team-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+    .team-member {
+      background: white;
+      border-radius: 32px;
+      padding: 24px 20px;
+      flex: 1 1 240px;
+      text-align: center;
+      box-shadow: 0 10px 18px rgba(0,0,0,0.04);
+      border: 1px solid #d4e6f1;
+    }
+    .team-member img {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      border: 4px solid var(--blue-mist);
+    }
+    .team-member h4 {
+      font-size: 1.35rem;
+      color: var(--blue-deep);
+    }
+    .team-member .role {
+      color: var(--blue-soft);
+      font-weight: 600;
+      margin: 8px 0 12px;
+    }
+
+    /* story timeline */
+    .story-block {
+      background: var(--gray-mild);
+      padding: 48px 40px;
+      border-radius: 48px;
+      margin: 50px 0;
+    }
+    .story-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+    }
+    .story-text {
+      flex: 1;
+    }
+    .story-text h3 {
+      font-size: 1.9rem;
+      color: var(--blue-deep);
+      margin-bottom: 20px;
+    }
+    .story-text p {
+      margin-bottom: 16px;
+    }
+    .story-img {
+      flex: 1;
+      border-radius: 32px;
+      overflow: hidden;
+    }
+    .story-img img {
+      width: 100%;
+      display: block;
+    }
+
+    /* cta */
+    .cta-about {
+      background: linear-gradient(125deg, #c4e2f2, #e2f0f9);
+      border-radius: 48px;
+      padding: 48px 32px;
+      text-align: center;
+      margin: 50px 0 30px;
+    }
+    .btn {
+      display: inline-block;
+      background: var(--blue-deep);
+      color: white;
+      padding: 12px 32px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.2s;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      margin-top: 16px;
+    }
+    .btn:hover {
+      background: #083c57;
+      transform: translateY(-2px);
+    }
+
+    /* footer same */
+    .footer {
+      background: #052c3f;
+      color: #e2f0f7;
+      padding: 48px 0 24px;
+      margin-top: 70px;
+      border-radius: 32px 32px 0 0;
+    }
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .footer-col h4 {
+      font-size: 1.4rem;
+      margin-bottom: 16px;
+      color: #cdeefc;
+    }
+    .footer-col p, .footer-col a {
+      color: #bfddee;
+      text-decoration: none;
+      margin: 8px 0;
+      display: block;
+    }
+    .footer-col a:hover {
+      text-decoration: underline;
+      color: white;
+    }
+    .copyright {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #1c5a78;
+      font-size: 0.85rem;
+    }
+    @media (max-width: 768px) {
+      .nav-flex {
+        flex-direction: column;
+        gap: 16px;
+      }
+      .about-hero h2 {
+        font-size: 2.2rem;
+      }
+      .section-title {
+        font-size: 1.8rem;
+      }
+      .pillar-card {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container nav-flex">
+    <div class="logo">
+      <h1>Kind Creature <span>Corner</span></h1>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" style="color: #0a4b6e; border-bottom: 2px solid #4a9fd8; padding-bottom: 4px;">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="terms.html">Terms Of Privacy</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="cookies.html">Cookies Policy</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <!-- about hero intro -->
+  <div class="about-hero">
+    <div class="container about-hero-content">
+      <h2>Our story, heart & soul</h2>
+      <p>For over two decades, Kind Creature Corner has been a sanctuary of excellence, empathy, and innovation in pet wellness. We are more than a service — we are a family dedicated to elevating the lives of animals and their humans.</p>
+      <span class="badge-years">✨ Est. 2004 • Fear Free Certified ✨</span>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Mission + vision -->
+    <div class="mission-grid">
+      <div class="mission-text">
+        <h3>Our Mission: More than care — real kinship</h3>
+        <p>At Kind Creature Corner, our mission is simple yet profound: to nurture the bond between people and pets through compassionate, evidence-based care. We blend modern veterinary science with old‑fashioned tenderness, creating a space where every whisker, feather, and paw is treated with dignity and respect.</p>
+        <p>We envision a world where no pet faces neglect or fear during vet visits, and every owner feels empowered with knowledge. We’re proud to be a blue-ribbon facility recognized for low-stress handling, holistic wellness programs, and community outreach that includes free microchipping events and senior pet palliative support.</p>
+        <p><strong>🐾 Over 8,500+ families served • 98% client satisfaction • 24/7 emergency guidance</strong></p>
+      </div>
+      <div class="mission-img">
+        <img src="https://picsum.photos/id/215/600/500" alt="staff hugging dog and cat together warm welcome" loading="lazy">
+      </div>
+    </div>
+
+    <!-- Core values pillars (unique content) -->
+    <div class="values-section">
+      <div class="section-title">🌟 The Pillars of Kind Creature</div>
+      <div class="pillars">
+        <div class="pillar-card"><div class="pillar-icon">❤️</div><h4>Compassion First</h4><p>Every interaction is guided by empathy. We listen to both pet and parent, tailoring every treatment to emotional and physical needs.</p></div>
+        <div class="pillar-card"><div class="pillar-icon">🧠</div><h4>Fear-Free Excellence</h4><p>All staff trained in force-free handling, pheromone techniques, and calm environments — reducing anxiety for anxious rescues & cats.</p></div>
+        <div class="pillar-card"><div class="pillar-icon">🌿</div><h4>Holistic Wellness</h4><p>Integrating nutrition, behavior, traditional medicine, and complementary therapies like acupuncture & laser therapy.</p></div>
+        <div class="pillar-card"><div class="pillar-icon">🌎</div><h4>Community Guardians</h4><p>Free education, low-cost vaccine clinics, partnerships with local shelters, and a pet food pantry for families in need.</p></div>
+      </div>
+    </div>
+
+    <!-- our team introduction (authentic) -->
+    <div class="section-title" style="text-align: left;">🐕 Meet the Kind Hearts Behind the Corner</div>
+    <p style="margin-bottom: 28px; font-size: 1.05rem;">Our extraordinary team of veterinarians, certified groomers, behavior consultants, and support staff shares one mission: unconditional love paired with professional mastery. Each team member is Fear Free certified and participates in ongoing education.</p>
+    <div class="team-grid">
+      <div class="team-member"><img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Dr. Elena"><h4>Dr. Elena Vasquez</h4><div class="role">DVM, Chief Medical Officer</div><p>20+ years in integrative medicine, pioneer in low-stress feline care.</p></div>
+      <div class="team-member"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Marcus"><h4>Marcus T. Chen</h4><div class="role">Certified Behaviorist</div><p>Fear Free Elite, specializes in separation anxiety & reactive dogs.</p></div>
+      <div class="team-member"><img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sophia"><h4>Sophia Ramirez</h4><div class="role">Head Grooming Artist</div><p>Master of organic spa techniques, calming touch for anxious pets.</p></div>
+      <div class="team-member"><img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Dr. Liam"><h4>Dr. Liam Okonkwo</h4><div class="role">Exotic & Avian Vet</div><p>Expert in reptiles, parrots, and small mammal wellness protocols.</p></div>
+    </div>
+
+    <!-- our story / founding story - long form unique content -->
+    <div class="story-block">
+      <div class="story-flex">
+        <div class="story-text">
+          <h3>🐾 From a small dream to a blue-harbor landmark</h3>
+          <p>In 2004, founder Grace Holloway opened the doors of Kind Creature Corner with a single exam room and a radical idea: that veterinary care should be gentle, transparent, and deeply personal. What began as a one-woman mission quickly grew into the most trusted pet wellness hub in the Blue Harbor District. Over the years, we expanded to a full-service hospital, a resort-style grooming spa, and a retail space stocked with sustainable, vet-approved products.</p>
+          <p>We've weathered everything from economic shifts to the pandemic by doubling down on our commitment: telemedicine access, curbside care, and mental wellness support for isolated pets. In 2020, we launched our "Pawsitivity Project" – a free behavioral helpline that has assisted more than 2,000 anxious pet parents. Our blue-themed facility now includes quiet zones, a certified cat‑only waiting area, and an indoor play park for rehabilitation.</p>
+          <p>Every year we host the "Creature Comfort Festival" to celebrate adoption and responsible pet ownership. Being part of this community's growth has been our greatest joy.</p>
+        </div>
+        <div class="story-img">
+          <img src="https://picsum.photos/id/208/500/400" alt="historic team photo with pets" loading="lazy">
+        </div>
+      </div>
+    </div>
+
+    <!-- Impact numbers & recognition (unique content) -->
+    <div style="display: flex; flex-wrap: wrap; gap: 20px; margin: 40px 0; justify-content: space-between;">
+      <div style="background: var(--blue-mist); border-radius: 28px; padding: 28px; flex:1; text-align:center;">
+        <h3 style="font-size: 2.5rem; color: #0a4b6e;">12k+</h3>
+        <p style="font-weight: 600;">Happy pet checkups</p>
+        <small>Preventive & wellness visits since 2020</small>
+      </div>
+      <div style="background: var(--blue-mist); border-radius: 28px; padding: 28px; flex:1; text-align:center;">
+        <h3 style="font-size: 2.5rem; color: #0a4b6e;">450+</h3>
+        <p style="font-weight: 600;">Shelter adoptions facilitated</p>
+        <small>Partnering with local rescues</small>
+      </div>
+      <div style="background: var(--blue-mist); border-radius: 28px; padding: 28px; flex:1; text-align:center;">
+        <h3 style="font-size: 2.5rem; color: #0a4b6e;">100%</h3>
+        <p style="font-weight: 600;">Fear Free Certified staff</p>
+        <small>Low-stress handling for every patient</small>
+      </div>
+    </div>
+
+    <!-- "Why choose us" deep dive + unique philosophy -->
+    <div style="background: white; border-radius: 40px; padding: 40px; border: 1px solid #cfe6f5; margin: 50px 0;">
+      <h3 style="font-size: 1.9rem; color: #0a4b6e; margin-bottom: 20px;">💙 What makes Kind Creature Corner different?</h3>
+      <div style="display: flex; flex-wrap: wrap; gap: 30px;">
+        <div style="flex:1"><h4>🏆 Advanced diagnostics on-site</h4><p>Digital radiology, ultrasound, and in-house lab — rapid results for critical cases. No need to shuttle your pet across town.</p></div>
+        <div style="flex:1"><h4>🌸 Fear-free design everywhere</h4><p>Calming colors (our signature blues!), pheromone diffusers, soft flooring, and separate dog/cat zones to eliminate stress.</p></div>
+        <div style="flex:1"><h4>📱 Virtual care & tele-triage</h4><p>Access vet advice from your couch; prescription food delivery and at-home coaching for behavioral concerns.</p></div>
+      </div>
+      <div style="margin-top: 28px;">
+        <p><strong>✨ Also unique: </strong>We have a full-time nutritionist and a "Senior Pet Club" that includes at-home quality-of-life assessments. Our “end-of-life compassion suite” provides a peaceful, dignified farewell surrounded by loved ones. We are deeply committed to sustainability: all our towels are organic cotton, and we donate a portion of proceeds to wildlife preservation funds.</p>
+      </div>
+    </div>
+
+    <!-- client testimonials (realistic) -->
+    <div class="section-title" style="margin-top: 20px;">💬 Whispers from our furry families</div>
+    <div style="display: flex; flex-wrap: wrap; gap: 28px; margin: 35px 0;">
+      <div style="background: #eef6fc; border-radius: 28px; padding: 24px; flex:1;"><p>“I brought my terrified rescue hound to Kind Creature Corner after 3 bad vet experiences. The team used treats, gentle words, and let us sit in the low-sensory room. Now my dog actually wags his tail when we arrive! Unbelievable transformation.” — <strong>Jenna R.</strong></p></div>
+      <div style="background: #eef6fc; border-radius: 28px; padding: 24px; flex:1;"><p>“Dr. Elena saved my cat’s life by diagnosing early kidney disease during a routine senior panel. The nutritional guidance and at-home subcutaneous fluids training gave my Felix extra happy years. Forever grateful.” — <strong>William T.</strong></p></div>
+      <div style="background: #eef6fc; border-radius: 28px; padding: 24px; flex:1;"><p>“My parrot Kiwi was plucking feathers due to stress. The avian vet designed an enrichment program, and now his plumage is beautiful again. Their holistic approach is top-notch!” — <strong>Nancy L.</strong></p></div>
+    </div>
+
+    <!-- community involvement + press / call to action -->
+    <div class="cta-about">
+      <h3 style="font-size: 1.9rem; color: #0a4b6e;">🐕 Join the Kind Creature Family</h3>
+      <p style="font-size: 1.2rem; max-width: 680px; margin: 16px auto;">Whether you're adopting a new puppy, caring for a senior soul, or seeking expert advice, we're here to help. Drop by our Blue Harbor sanctuary, schedule a facility tour, or ask about our wellness plans.</p>
+      <a href="#" class="btn">Request an appointment →</a>
+      <p style="margin-top: 20px; font-size: 0.9rem;">📍 1234 Pawsome Lane, Blue Harbor District, San Francisco, CA 94107 | 📞 +1 (415) 882-PETS (7387)</p>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-col">
+        <h4>Kind Creature Corner</h4>
+        <p>📍 1234 Pawsome Lane, Blue Harbor District<br>San Francisco, CA 94107</p>
+        <p>📞 <strong>+1 (415) 882-PETS (7387)</strong></p>
+        <p>📧 hello@kindcreaturecorner.com</p>
+      </div>
+      <div class="footer-col">
+        <h4>Hours</h4>
+        <p>Mon-Fri: 8:00am – 7:00pm</p>
+        <p>Saturday: 9:00am – 5:00pm</p>
+        <p>Sunday: Grooming & boarding only</p>
+        <p>Emergency: 24/7 triage line via phone</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <p><a href="#">About Us</a></p>
+        <p><a href="#">Wellness Blog</a></p>
+        <p><a href="#">Careers</a></p>
+        <p><a href="#">Pet loss support</a></p>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>© 2026 Kind Creature Corner — Blue Theme Pet Care Excellence. Every tail wag matters. 🐕🐈🦜</p>
+      <p style="margin-top: 10px;">Address: 1234 Pawsome Lane, Blue Harbor District, San Francisco, CA 94107 | Phone: +1 (415) 882-PETS (7387)</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // smooth scroll for any internal hash links if needed
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href !== "#" && href !== "" && href.startsWith('#')) {
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    });
+  });
+  console.log("Kind Creature Corner About Page — integrated with blue theme, team details, mission and community spirit.");
+</script>
+</body>
+</html>
